@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Hero Background */
+.hero-bg {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%2387CEEB;stop-opacity:1" /><stop offset="50%" style="stop-color:%2398FB98;stop-opacity:1" /><stop offset="100%" style="stop-color:%23FFB347;stop-opacity:1" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23bg)"/><circle cx="200" cy="150" r="80" fill="white" opacity="0.1"/><circle cx="800" cy="300" r="120" fill="white" opacity="0.08"/><circle cx="1000" cy="600" r="100" fill="white" opacity="0.1"/><path d="M0,400 Q300,300 600,400 T1200,400 L1200,800 L0,800 Z" fill="white" opacity="0.05"/></svg>');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Card Hover Effects */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Fade In Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.fade-in-delay-1 { 
+    animation-delay: 0.2s; 
+}
+
+.fade-in-delay-2 { 
+    animation-delay: 0.4s; 
+}
+
+.fade-in-delay-3 { 
+    animation-delay: 0.6s; 
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating Animation */
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% { 
+        transform: translateY(0px); 
+    }
+    50% { 
+        transform: translateY(-10px); 
+    }
+}
+
+/* Destination Cards */
+.destination-card {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.destination-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
+}
+
+.destination-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Individual Destination Backgrounds */
+.destination-paris {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><linearGradient id="paris" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23FFB6C1;stop-opacity:1" /><stop offset="100%" style="stop-color:%23FFA07A;stop-opacity:1" /></linearGradient></defs><rect width="400" height="300" fill="url(%23paris)"/><polygon points="200,50 180,120 220,120" fill="%23654321"/><rect x="190" y="120" width="20" height="80" fill="%23654321"/><text x="200" y="250" text-anchor="middle" fill="white" font-size="24" font-weight="bold">🗼</text></svg>');
+}
+
+.destination-tokyo {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><linearGradient id="tokyo" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23FF69B4;stop-opacity:1" /><stop offset="100%" style="stop-color:%23FF1493;stop-opacity:1" /></linearGradient></defs><rect width="400" height="300" fill="url(%23tokyo)"/><circle cx="200" cy="80" r="30" fill="white" opacity="0.8"/><rect x="180" y="110" width="40" height="100" fill="%23333"/><text x="200" y="250" text-anchor="middle" fill="white" font-size="24" font-weight="bold">🏯</text></svg>');
+}
+
+.destination-bali {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><linearGradient id="bali" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%2300CED1;stop-opacity:1" /><stop offset="100%" style="stop-color:%2320B2AA;stop-opacity:1" /></linearGradient></defs><rect width="400" height="300" fill="url(%23bali)"/><ellipse cx="200" cy="200" rx="150" ry="30" fill="%23F0E68C"/><circle cx="100" cy="180" r="20" fill="%23228B22"/><circle cx="300" cy="170" r="25" fill="%23228B22"/><text x="200" y="250" text-anchor="middle" fill="white" font-size="24" font-weight="bold">🏝</text></svg>');
+}
+
+.destination-newyork {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><linearGradient id="ny" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%234169E1;stop-opacity:1" /><stop offset="100%" style="stop-color:%231E90FF;stop-opacity:1" /></linearGradient></defs><rect width="400" height="300" fill="url(%23ny)"/><rect x="50" y="100" width="20" height="120" fill="%23696969"/><rect x="80" y="80" width="25" height="140" fill="%23696969"/><rect x="120" y="60" width="30" height="160" fill="%23696969"/><rect x="160" y="90" width="20" height="130" fill="%23696969"/><text x="200" y="250" text-anchor="middle" fill="white" font-size="24" font-weight="bold">🏙</text></svg>');
+}
+
+.destination-santorini {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><linearGradient id="santorini" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%2387CEEB;stop-opacity:1" /><stop offset="100%" style="stop-color:%234682B4;stop-opacity:1" /></linearGradient></defs><rect width="400" height="300" fill="url(%23santorini)"/><path d="M0,200 Q100,150 200,180 T400,200 L400,300 L0,300 Z" fill="white"/><circle cx="150" cy="170" r="15" fill="%234169E1"/><circle cx="250" cy="160" r="12" fill="%234169E1"/><text x="200" y="250" text-anchor="middle" fill="white" font-size="24" font-weight="bold">🏛</text></svg>');
+}
+
+.destination-dubai {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><linearGradient id="dubai" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23FFD700;stop-opacity:1" /><stop offset="100%" style="stop-color:%23FFA500;stop-opacity:1" /></linearGradient></defs><rect width="400" height="300" fill="url(%23dubai)"/><rect x="180" y="50" width="40" height="170" fill="%23C0C0C0"/><polygon points="200,50 190,70 210,70" fill="%23FFD700"/><rect x="120" y="120" width="25" height="100" fill="%23C0C0C0"/><rect x="255" y="100" width="30" height="120" fill="%23C0C0C0"/><text x="200" y="250" text-anchor="middle" fill="white" font-size="24" font-weight="bold">🏗</text></svg>');
+}
+
+/* Booking Form */
+.booking-form {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Navigation Links */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: #3B82F6;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .hero-bg {
+        background-attachment: scroll;
+    }
+    
+    .fade-in {
+        animation-delay: 0s !important;
+    }
+    
+    .destination-card {
+        height: 300px;
+    }
+}
+
+/* Additional Utility Classes */
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #3B82F6, #8B5CF6);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #2563EB, #7C3AED);
+}
+
+And finally, the JavaScript file (script.js):
+
+// Smooth scrolling for navigation
+function scrollToSection(sectionId) {
+    document.getElementById(sectionId).scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+
+// Contact form submission
+function handleContactSubmit(event) {
+    event.preventDefault();
+    const messageDiv = document.getElementById('contactMessage');
+    const messageText = messageDiv.querySelector('p');
+    
+    // Show success message
+    messageDiv.className = 'mt-4 p-4 rounded-lg bg-green-100 border border-green-300';
+    messageText.textContent = 'Thank you for your message! We\'ll get back to you within 24 hours to help plan your perfect trip.';
+    messageText.className = 'text-center font-medium text-green-800';
+    
+    // Reset form
+    event.target.reset();
+    
+    // Hide message after 5 seconds
+    setTimeout(() => {
+        messageDiv.classList.add('hidden');
+    }, 5000);
+}
+
+// Newsletter subscription
+function handleNewsletterSubmit(event) {
+    event.preventDefault();
+    alert('Thank you for subscribing! You\'ll receive our latest travel deals and tips.');
+    event.target.reset();
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Add active state to navigation
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - 200)) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('text-blue-600');
+        if (link.getAttribute('href') === #${current}) {
+            link.classList.add('text-blue-600');
+        }
+    });
+});
+
+// Add click handlers for destination cards
+document.querySelectorAll('.destination-card').forEach(card => {
+    card.addEventListener('click', function() {
+        const destination = this.querySelector('h3').textContent;
+        alert(Exploring ${destination}! This would normally take you to the detailed destination page.);
+    });
+});
+
+// Add click handlers for package buttons
+document.querySelectorAll('.search-btn, button[class*="bg-"]').forEach(button => {
+    if (button.textContent.includes('Choose Plan') || button.textContent.includes('Book Now')) {
+        button.addEventListener('click', function() {
+            alert('Booking system would open here! This is a demo version.');
+        });
+    }
+});
+
+// Intersection Observer for animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+        }
+    });
+}, observerOptions);
+
+// Observe elements for animation
+document.addEventListener('DOMContentLoaded', () => {
+    const animateElements = document.querySelectorAll('.card-hover, .destination-card');
+    animateElements.forEach(el => observer.observe(el));
+});
+
+// Mobile menu toggle (if you want to add mobile navigation later)
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu) {
+        mobileMenu.classList.toggle('hidden');
+    }
+}
+
+// Lazy loading for better performance
+document.addEventListener('DOMContentLoaded', () => {
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+
+    lazyImages.forEach(img => imageObserver.observe(img));
+});
