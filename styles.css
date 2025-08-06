@@ -314,4 +314,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     lazyImages.forEach(img => imageObserver.observe(img));
+
 });
